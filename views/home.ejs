@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JSON and PCAP Analyzer</title>
+</head>
+
+<body>
+    <h1>JSON and PCAP Analyzer</h1>
+
+    <form id="analyzeForm" method="POST" action="/analyze" enctype="multipart/form-data">
+        <div>
+            <h3>Upload JSON:</h3>
+            <input type="file" name="json" accept=".json">
+        </div>
+
+        <div>
+            <h3>Upload PCAP:</h3>
+            <input type="file" name="pcap" accept=".pcap">
+        </div>
+
+        <button type="submit">Analyze</button>
+    </form>
+
+    <h2>Results:</h2>
+    <table id="resultsTable">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Source IP</th>
+                <th>Destination IP</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (results && results.length> 0) { %>
+                <% for (var i=0; i < results.length; i++) { %>
+                    <tr>
+                        <td>
+                            <%= results[i].time %>
+                        </td>
+                        <td>
+                            <%= results[i].sourceIP %>
+                        </td>
+                        <td>
+                            <%= results[i].destinationIP %>
+                        </td>
+                    </tr>
+                    <% } %>
+                        <% } else { %>
+                            <tr>
+                                <td colspan="3">No results found.</td>
+                            </tr>
+                            <% } %>
+        </tbody>
+    </table>
+</body>
+
+</html>
