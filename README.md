@@ -92,7 +92,7 @@ PcapParser is open-source software licensed under the [MIT License](https://gith
 
 If you have any questions, suggestions, or feedback about PcapParser, please don't hesitate to contact the project maintainer:
 
-- Email: your-email@example.com
+- Email: g.rishank02@gmail.com
 - GitHub: [alienblack](https://github.com/alienblack)
 
 ---
